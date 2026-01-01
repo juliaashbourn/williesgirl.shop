@@ -1,128 +1,896 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HUNANIMA - Machines Agricoles Simples</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Willie's Girl, LLC • Shower Design</title>
+  <meta name="description" content="Willie's Girl, LLC — Shower Design. Modern walk-in showers, glass enclosures, tile concepts, and premium bathroom upgrades." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: #eaf0ff;
+      --muted: rgba(234,240,255,.74);
+      --line: rgba(234,240,255,.12);
+      --accent: #7dd3fc;   /* sky */
+      --accent2:#a78bfa;   /* violet */
+      --good: #34d399;     /* green */
+      --warn: #fbbf24;     /* amber */
+      --shadow: 0 22px 70px rgba(0,0,0,.45);
+      --r-xl: 26px;
+      --r-lg: 18px;
+      --r-md: 14px;
+      --r-sm: 12px;
+      --max: 1180px;
     }
-    header {
-      background-color: #2e7d32; /* Vert foncé */
-      color: #fdd835; /* Jaune vif */
-      padding: 20px;
-      text-align: center;
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html,body{ height:100%; }
+    body{
+      font-family:"Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(125,211,252,.35), transparent 55%),
+        radial-gradient(900px 520px at 90% 10%, rgba(167,139,250,.28), transparent 55%),
+        radial-gradient(700px 520px at 65% 110%, rgba(52,211,153,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      overflow-x:hidden;
     }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 22px; }
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(11,18,32,.72);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid var(--line);
     }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2em;
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
     }
-    nav {
-      background-color: #fdd835;
-      padding: 10px;
-      text-align: center;
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 240px;
     }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      color: #2e7d32;
+    .logo{
+      width:38px; height:38px; border-radius:14px;
+      background:
+        radial-gradient(14px 14px at 30% 25%, rgba(255,255,255,.65), transparent 55%),
+        linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow: 0 14px 35px rgba(125,211,252,.18);
+      display:grid; place-items:center;
+      font-weight:800; color:#07111f;
+      letter-spacing:.02em;
     }
-    .hero {
-      background: url('https://i.pinimg.com/550x/a9/df/51/a9df5172829f8c05f5b92f97553d41ae.jpg') no-repeat center center/cover;
-      height: 350px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      font-size: 2em;
+    .brand h1{
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      line-height:1.1;
     }
-    section {
-      padding: 50px 20px;
-      text-align: center;
+    .brand small{
+      display:block;
+      color:var(--muted);
+      letter-spacing:.02em;
+      text-transform:none;
+      font-weight:500;
+      margin-top:3px;
+      font-size:12px;
     }
-    section h2 {
-      color: #2e7d32;
-      margin-bottom: 20px;
+
+    .links{
+      display:flex; align-items:center; gap:18px;
+      color: rgba(234,240,255,.82);
+      font-weight:600;
+      font-size:13px;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+    .links a{ opacity:.82; transition:.18s ease; }
+    .links a:hover{ opacity:1; transform: translateY(-1px); }
+
+    .cta{
+      display:flex; align-items:center; gap:10px;
     }
-    .gallery img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+    .btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      display:inline-flex; align-items:center; gap:8px;
+      transition: .18s ease;
+      cursor:pointer;
+      white-space:nowrap;
     }
-    footer {
-      background-color: #2e7d32;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
+    .btn:hover{ background: rgba(255,255,255,.10); transform: translateY(-1px); }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      color:#07111f;
+      box-shadow: 0 18px 55px rgba(125,211,252,.16);
     }
-    footer p {
-      margin: 5px 0;
+    .btn.primary:hover{ box-shadow: 0 22px 70px rgba(167,139,250,.20); }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.85);
+      font-size:12px;
+      font-weight:700;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--good);
+      box-shadow: 0 0 0 6px rgba(52,211,153,.12);
+    }
+
+    /* Hero */
+    .hero{ padding: 38px 0 26px; }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroLeft{
+      padding:28px;
+      min-height: 440px;
+    }
+    .kicker{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+    .heroTitle{
+      font-size: clamp(30px, 4.2vw, 48px);
+      line-height: 1.05;
+      letter-spacing:-.03em;
+      margin-bottom:14px;
+    }
+    .heroTitle span{
+      background: linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .heroText{
+      color: rgba(234,240,255,.80);
+      font-size: 15px;
+      max-width: 56ch;
+      margin-bottom:18px;
+    }
+    .heroBullets{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin: 12px 0 18px;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      color: rgba(234,240,255,.86);
+    }
+    .tag i{
+      width:8px; height:8px; border-radius:99px;
+      background: rgba(125,211,252,1);
+      box-shadow: 0 0 0 6px rgba(125,211,252,.12);
+      display:inline-block;
+    }
+    .heroActions{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top: 10px;
+    }
+
+    .miniStats{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:10px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--r-lg);
+      padding:12px;
+    }
+    .stat strong{ display:block; font-size:13px; }
+    .stat span{ display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+
+    /* Hero Right */
+    .heroRight{
+      display:grid;
+      grid-template-rows: 1fr auto;
+      gap:12px;
+    }
+    .imgCard{
+      border:1px solid var(--line);
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      background: rgba(0,0,0,.2);
+      position:relative;
+      min-height: 330px;
+    }
+    .imgCard img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transform:scale(1.03);
+      filter:saturate(1.05) contrast(1.02);
+    }
+    .imgOverlay{
+      position:absolute; left:14px; right:14px; bottom:14px;
+      border-radius: 18px;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      background: rgba(11,18,32,.66);
+      backdrop-filter: blur(12px);
+      display:flex; align-items:flex-start; justify-content:space-between; gap:10px;
+    }
+    .imgOverlay strong{ font-size:13px; }
+    .imgOverlay small{ color:var(--muted); display:block; margin-top:2px; font-size:12px; }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius: 999px;
+      background: rgba(125,211,252,.14);
+      border: 1px solid rgba(125,211,252,.35);
+      color: rgba(234,240,255,.92);
+      font-weight:800;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:12px;
+    }
+    .thumb{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--r-lg);
+      overflow:hidden;
+      height: 105px;
+      position:relative;
+    }
+    .thumb img{ width:100%; height:100%; object-fit:cover; }
+    .thumbLabel{
+      position:absolute; left:10px; bottom:10px;
+      padding:6px 9px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      background: rgba(11,18,32,.62);
+      backdrop-filter: blur(10px);
+      font-size:11px;
+      font-weight:800;
+      color: rgba(234,240,255,.9);
+    }
+
+    /* Sections */
+    section{ padding: 34px 0; }
+    .sectionHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom: 16px;
+      flex-wrap:wrap;
+    }
+    .sectionHead h2{
+      font-size: 22px;
+      letter-spacing: -.01em;
+    }
+    .sectionHead p{
+      color: var(--muted);
+      max-width: 64ch;
+      font-size: 13px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:14px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--r-xl);
+      padding:16px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .cardTop{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      margin-bottom:10px;
+    }
+    .icon{
+      width:38px; height:38px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      background:
+        radial-gradient(14px 14px at 30% 25%, rgba(255,255,255,.55), transparent 55%),
+        rgba(255,255,255,.06);
+      border:1px solid rgba(234,240,255,.16);
+      font-size:18px;
+    }
+    .card h3{ font-size: 15px; margin-bottom:6px; }
+    .card p{ color: var(--muted); font-size: 13px; }
+    .chip{
+      font-size:11px;
+      font-weight:900;
+      padding:6px 9px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.86);
+      white-space:nowrap;
+    }
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+    }
+    .galleryMain{
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      min-height: 360px;
+      position:relative;
+    }
+    .galleryMain img{ width:100%; height:100%; object-fit:cover; }
+    .gallerySide{
+      display:grid;
+      gap:14px;
+    }
+    .gallerySmall{
+      border-radius: var(--r-xl);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      height: 173px;
+      position:relative;
+    }
+    .gallerySmall img{ width:100%; height:100%; object-fit:cover; }
+    .note{
+      position:absolute; left:14px; bottom:14px;
+      border:1px solid var(--line);
+      background: rgba(11,18,32,.66);
+      backdrop-filter: blur(12px);
+      padding:9px 12px;
+      border-radius: 999px;
+      font-size:12px;
+      font-weight:800;
+    }
+
+    /* Process */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap:12px;
+    }
+    .step{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--r-xl);
+      padding:14px;
+      position:relative;
+      overflow:hidden;
+    }
+    .stepNum{
+      width:34px; height:34px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      color:#07111f;
+      display:grid; place-items:center;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    .step h3{ font-size:14px; margin-bottom:6px; }
+    .step p{ color:var(--muted); font-size:12.5px; }
+
+    /* Contact */
+    .contactGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:14px;
+      align-items:start;
+    }
+    .panel{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius: var(--r-xl);
+      padding:18px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.20);
+    }
+    .fieldRow{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:10px;
+      margin-top:12px;
+    }
+    label{
+      font-size:12px;
+      color: rgba(234,240,255,.78);
+      font-weight:800;
+      display:block;
+      margin-bottom:6px;
+      letter-spacing:.02em;
+    }
+    input, textarea, select{
+      width:100%;
+      border-radius: 14px;
+      border:1px solid rgba(234,240,255,.16);
+      background: rgba(255,255,255,.05);
+      color:var(--text);
+      padding:10px 12px;
+      outline:none;
+      font-size:13px;
+      transition: .15s ease;
+    }
+    input:focus, textarea:focus, select:focus{
+      border-color: rgba(125,211,252,.55);
+      box-shadow: 0 0 0 4px rgba(125,211,252,.12);
+      background: rgba(255,255,255,.07);
+    }
+    textarea{ min-height: 110px; resize: vertical; }
+    .hint{
+      font-size:12px;
+      color: var(--muted);
+      margin-top:10px;
+    }
+
+    .infoList{
+      list-style:none;
+      margin-top:10px;
+      display:grid;
+      gap:8px;
+      color: rgba(234,240,255,.86);
+      font-size:13px;
+    }
+    .infoList li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(234,240,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .infoIcon{
+      width:32px; height:32px;
+      border-radius: 14px;
+      display:grid; place-items:center;
+      border:1px solid rgba(234,240,255,.16);
+      background: rgba(255,255,255,.05);
+      flex:0 0 auto;
+    }
+    .infoList b{ display:block; font-size:12px; color: rgba(234,240,255,.92); }
+    .infoList span{ display:block; font-size:12px; color: var(--muted); margin-top:2px; }
+
+    /* Footer */
+    footer{
+      padding: 22px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size:12px;
+    }
+    .foot{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:10px; flex-wrap:wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .heroLeft{ min-height:unset; }
+      .gallery{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .cards{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .contactGrid{ grid-template-columns: 1fr; }
+      .links{ display:none; }
+      .brand{ min-width: unset; }
+    }
+    @media (max-width: 560px){
+      .miniStats{ grid-template-columns: 1fr; }
+      .grid3{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+      .fieldRow{ grid-template-columns: 1fr; }
+      .heroLeft{ padding:20px; }
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>HUNANIMA</h1>
-    <p>Machines Agricoles Simples et Fiables</p>
-  </header>
+  <!-- NAV -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">WG</div>
+          <div>
+            <h1>Willie's Girl, LLC</h1>
+            <small>Shower Design • Walk-in • Glass • Tile</small>
+          </div>
+        </div>
 
-  <nav>
-    <a href="#about">À propos</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#contact">Contact</a>
-  </nav>
+        <div class="links">
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-  <div class="hero">
-    <p>Votre partenaire pour des machines agricoles durables</p>
+        <div class="cta">
+          <a class="btn" href="tel:+13608492706">📞 360-849-2706</a>
+          <a class="btn primary" href="#contact">Get a Quote</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <section id="about">
-    <h2>À propos de nous</h2>
-    <p>
-      Chez <strong>HUNANIMA</strong>, nous nous spécialisons dans la fabrication et la distribution de 
-      <strong>machines agricoles simples</strong> pour faciliter le travail des agriculteurs. 
-      Nos solutions combinent <em>durabilité, efficacité et innovation</em> afin de répondre aux besoins de toutes les exploitations.
-    </p>
-  </section>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
 
-  <section id="gallery">
-    <h2>Nos Machines</h2>
-    <div class="gallery">
-      <img src="http://ogden_images.s3.amazonaws.com/www.motherearthnews.com/images/2014/11/22234423/Boaz-Mini-Combine-jpg.jpg" alt="Mini moissonneuse">
-      <img src="https://krs-agro.ru/products/zagotovka_kormov/elho/19/7.jpg" alt="Machine agricole">
-      <img src="https://img.mod-network.net/files/images/6218ac69d37fb/SimpleFarmSilov1000_6222.jpg" alt="Équipement agricole simple">
+        <div class="heroCard heroLeft">
+          <div class="kicker">
+            <div class="pill"><span class="dot"></span> Available for new projects</div>
+            <div class="pill">Premium • Clean • Modern</div>
+          </div>
+
+          <h2 class="heroTitle">
+            Elevate your bathroom with a <span>stunning custom shower</span>.
+          </h2>
+          <p class="heroText">
+            Willie’s Girl, LLC specializes in shower design concepts: walk-in layouts, glass enclosures,
+            tile combinations, niche placement, lighting ideas, and finish selections — built to look
+            high-end and feel practical every day.
+          </p>
+
+          <div class="heroBullets">
+            <span class="tag"><i></i> Walk-in shower concepts</span>
+            <span class="tag"><i></i> Glass enclosure planning</span>
+            <span class="tag"><i></i> Tile & material moodboards</span>
+            <span class="tag"><i></i> Space optimization</span>
+          </div>
+
+          <div class="heroActions">
+            <a class="btn primary" href="mailto:admin@williesgirl.shop">✉️ Email us</a>
+            <a class="btn" href="#gallery">🖼️ View designs</a>
+          </div>
+
+          <div class="miniStats">
+            <div class="stat">
+              <strong>Modern Shower Aesthetics</strong>
+              <span>Clean lines • premium finishes</span>
+            </div>
+            <div class="stat">
+              <strong>Functional Layouts</strong>
+              <span>Drain slope • splash zones • comfort</span>
+            </div>
+            <div class="stat">
+              <strong>Fast Design Turnaround</strong>
+              <span>Concept → selections → final plan</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <div class="imgCard">
+            <img src="https://www.porcelanosa.com/trendbook/app/uploads/2023/05/shower-room-with-walk-in-enclosure-1.jpg" alt="Modern walk-in shower design">
+            <div class="imgOverlay">
+              <div>
+                <strong>Walk-in Enclosure Concept</strong>
+                <small>Minimal frame • clean glass • premium look</small>
+              </div>
+              <div class="badge">Design Focus</div>
+            </div>
+          </div>
+
+          <div class="grid3">
+            <div class="thumb">
+              <img src="https://i.pinimg.com/originals/52/d7/9a/52d79ac87a69593148b81047c1aa3598.jpg" alt="Shower tile and glass inspiration">
+              <div class="thumbLabel">Tile • Glass</div>
+            </div>
+            <div class="thumb">
+              <img src="https://i.pinimg.com/originals/7b/46/9c/7b469c2670061b2b351619918db717d8.png" alt="Shower design layout">
+              <div class="thumbLabel">Layout Plan</div>
+            </div>
+            <div class="thumb">
+              <img src="https://staklaris.rs/wp-content/uploads/2024/01/modern-shower-stall-2023-11-27-05-30-43-utc.jpg" alt="Modern shower stall design">
+              <div class="thumbLabel">Modern Stall</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Services</h2>
+          <p>From first idea to final design directions — we help you make a shower that looks expensive and works perfectly.</p>
+        </div>
+        <span class="pill">Shower Design Specialty</span>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="cardTop">
+            <div class="icon">🧱</div>
+            <span class="chip">Concept</span>
+          </div>
+          <h3>Tile & Material Direction</h3>
+          <p>We propose tile sizes, patterns, grout tone, wall/floor contrast, and a clean finish palette.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="icon">🪟</div>
+            <span class="chip">Glass</span>
+          </div>
+          <h3>Glass Enclosure Planning</h3>
+          <p>Walk-in enclosures, door swing, hardware finish, splash management — designed for daily comfort.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="icon">📐</div>
+            <span class="chip">Layout</span>
+          </div>
+          <h3>Layout & Space Optimization</h3>
+          <p>Niches, bench placement, faucet height, rain head position — balanced and functional.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="icon">💡</div>
+            <span class="chip">Details</span>
+          </div>
+          <h3>Lighting & Feature Ideas</h3>
+          <p>LED accents, feature walls, linear drains, and minimal fixtures for a premium look.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="icon">🧾</div>
+            <span class="chip">Selections</span>
+          </div>
+          <h3>Finish & Hardware Picks</h3>
+          <p>Chrome / brushed nickel / matte black / brass — we match everything so it feels “designed”.</p>
+        </div>
+
+        <div class="card">
+          <div class="cardTop">
+            <div class="icon">✅</div>
+            <span class="chip">Ready</span>
+          </div>
+          <h3>Final Design Summary</h3>
+          <p>Clear design notes you can hand to your contractor: layout direction + key choices.</p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Gallery</h2>
+          <p>Some inspiration styles — clean glass, warm textures, modern tile compositions.</p>
+        </div>
+        <a class="btn" href="#contact">Request a concept</a>
+      </div>
+
+      <div class="gallery">
+        <div class="galleryMain">
+          <img src="https://www.porcelanosa.com/trendbook/app/uploads/2023/05/shower-room-with-walk-in-enclosure-1.jpg" alt="Gallery main shower">
+          <div class="note">Walk-in • Minimal frame • Clean lines</div>
+        </div>
+        <div class="gallerySide">
+          <div class="gallerySmall">
+            <img src="https://i.pinimg.com/originals/52/d7/9a/52d79ac87a69593148b81047c1aa3598.jpg" alt="Gallery shower 2">
+            <div class="note">Tile harmony</div>
+          </div>
+          <div class="gallerySmall">
+            <img src="https://staklaris.rs/wp-content/uploads/2024/01/modern-shower-stall-2023-11-27-05-30-43-utc.jpg" alt="Gallery shower 3">
+            <div class="note">Modern stall</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Our Process</h2>
+          <p>Simple steps so you get a confident shower design direction (fast + clear).</p>
+        </div>
+        <span class="pill">4 Steps</span>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="stepNum">1</div>
+          <h3>Share your space</h3>
+          <p>Send dimensions + a quick photo/video + your style preference (modern, warm, minimal…).</p>
+        </div>
+        <div class="step">
+          <div class="stepNum">2</div>
+          <h3>Concept design</h3>
+          <p>We propose layout, glass type, niche/bench placement, and finish direction.</p>
+        </div>
+        <div class="step">
+          <div class="stepNum">3</div>
+          <h3>Selections & details</h3>
+          <p>Tile patterns, hardware finish, lighting ideas — everything aligned to one style.</p>
+        </div>
+        <div class="step">
+          <div class="stepNum">4</div>
+          <h3>Final summary</h3>
+          <p>You receive a clean summary you can hand to your contractor for execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
   <section id="contact">
-    <h2>Contactez-nous</h2>
-    <p><strong>Email :</strong> admin@tyusex.shop</p>
-    <p><strong>Téléphone :</strong> +33 7 38 50 26 36</p>
-    <p><strong>Adresse :</strong> Avenue Baratier, Montmorency, 95160, France</p>
+    <div class="wrap">
+      <div class="sectionHead">
+        <div>
+          <h2>Contact</h2>
+          <p>Tell us what you want, and we’ll reply with the next steps for your shower design.</p>
+        </div>
+        <span class="pill">admin@williesgirl.shop</span>
+      </div>
+
+      <div class="contactGrid">
+        <div class="panel">
+          <h3 style="font-size:16px; margin-bottom:10px;">Request a quote (demo form)</h3>
+
+          <!-- Demo form: uses mailto so it works on any hosting without backend -->
+          <form action="mailto:admin@williesgirl.shop" method="post" enctype="text/plain">
+            <div class="fieldRow">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="360-849-2706" required>
+              </div>
+            </div>
+
+            <div class="fieldRow">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@email.com" required>
+              </div>
+              <div>
+                <label for="type">Project Type</label>
+                <select id="type" name="type">
+                  <option>Walk-in shower</option>
+                  <option>Glass enclosure</option>
+                  <option>Tile redesign</option>
+                  <option>Full bathroom concept</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top:10px;">
+              <label for="msg">What do you want to build?</label>
+              <textarea id="msg" name="message" placeholder="Size, style, glass preference, tile vibe, niche/bench, timeline..."></textarea>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+              <button class="btn primary" type="submit">Send Email</button>
+              <a class="btn" href="tel:+13608492706">Call now</a>
+            </div>
+
+            <div class="hint">
+              Tip: You can attach photos/dimensions in your email for a faster concept.
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h3 style="font-size:16px; margin-bottom:10px;">Willie's Girl, LLC</h3>
+
+          <ul class="infoList">
+            <li>
+              <div class="infoIcon">✉️</div>
+              <div>
+                <b>Email</b>
+                <span><a href="mailto:admin@williesgirl.shop">admin@williesgirl.shop</a></span>
+              </div>
+            </li>
+            <li>
+              <div class="infoIcon">📞</div>
+              <div>
+                <b>Phone</b>
+                <span><a href="tel:+13608492706">360-849-2706</a></span>
+              </div>
+            </li>
+            <li>
+              <div class="infoIcon">🛁</div>
+              <div>
+                <b>Specialty</b>
+                <span>Shower design • walk-in • glass • tile direction</span>
+              </div>
+            </li>
+            <li>
+              <div class="infoIcon">⭐</div>
+              <div>
+                <b>What you get</b>
+                <span>Clean design direction you can build with confidence</span>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="mailto:admin@williesgirl.shop">Email</a>
+            <a class="btn" href="tel:+13608492706">Call</a>
+            <a class="btn" href="#services">Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 HUNANIMA - Tous droits réservés.</p>
+    <div class="wrap foot">
+      <div>© <span id="year"></span> Willie’s Girl, LLC • Shower Design</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
